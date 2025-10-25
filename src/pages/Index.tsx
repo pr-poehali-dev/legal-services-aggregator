@@ -379,7 +379,7 @@ export default function Index() {
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
@@ -410,7 +410,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
@@ -441,7 +441,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
@@ -472,7 +472,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
