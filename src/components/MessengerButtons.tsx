@@ -1,0 +1,67 @@
+import { useState } from 'react';
+import Icon from '@/components/ui/icon';
+
+const MessengerButtons = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const messengers = [
+    {
+      name: 'WhatsApp',
+      icon: 'MessageCircle',
+      color: 'bg-green-500 hover:bg-green-600',
+      link: 'https://wa.me/79001234567?text=Здравствуйте! Хочу получить консультацию юриста',
+    },
+    {
+      name: 'Telegram',
+      icon: 'Send',
+      color: 'bg-blue-500 hover:bg-blue-600',
+      link: 'https://t.me/yourcompany',
+    },
+  ];
+
+  return (
+    <div className="fixed bottom-6 right-6 z-40 flex flex-col-reverse items-end gap-3">
+      {isOpen && (
+        <div className="flex flex-col gap-3 animate-fade-in">
+          {messengers.map((messenger, index) => (
+            <a
+              key={messenger.name}
+              href={messenger.link}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${messenger.color} text-white rounded-full p-4 shadow-lg transition-all duration-300 hover:scale-110 hover:shadow-2xl flex items-center gap-2 group`}
+              style={{
+                animationDelay: `${index * 50}ms`,
+              }}
+            >
+              <Icon name={messenger.icon as any} size={24} />
+              <span className="max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300 whitespace-nowrap font-medium">
+                {messenger.name}
+              </span>
+            </a>
+          ))}
+        </div>
+      )}
+
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className={`${
+          isOpen ? 'bg-red-500 hover:bg-red-600' : 'bg-primary hover:bg-primary/90'
+        } text-white rounded-full p-5 shadow-2xl transition-all duration-300 hover:scale-110 relative`}
+        aria-label="Открыть мессенджеры"
+      >
+        <div className="absolute -top-1 -right-1 w-4 h-4 bg-green-500 rounded-full animate-pulse"></div>
+        {isOpen ? (
+          <Icon name="X" size={28} className="transition-transform duration-300" />
+        ) : (
+          <>
+            <Icon name="MessageSquare" size={28} className="transition-transform duration-300" />
+            <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></div>
+          </>
+        )}
+      </button>
+    </div>
+  );
+};
+
+export default MessengerButtons;

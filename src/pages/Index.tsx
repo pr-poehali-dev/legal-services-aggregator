@@ -9,6 +9,14 @@ import { useToast } from '@/hooks/use-toast';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import AIChatbot from '@/components/AIСhatbot';
 import CourtBackgroundSlider from '@/components/CourtBackgroundSlider';
+import FreeConsultationForm from '@/components/FreeConsultationForm';
+import PriceCalculator from '@/components/PriceCalculator';
+import StatsCounters from '@/components/StatsCounters';
+import ReviewsWithPhotos from '@/components/ReviewsWithPhotos';
+import SuccessCases from '@/components/SuccessCases';
+import OfficeLocation from '@/components/OfficeLocation';
+import MessengerButtons from '@/components/MessengerButtons';
+import FAQAccordion from '@/components/FAQAccordion';
 
 const services = [
   {
@@ -159,6 +167,7 @@ export default function Index() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const { toast } = useToast();
   const [scrollY, setScrollY] = useState(0);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   useEffect(() => {
     const observerOptions = {
@@ -202,6 +211,7 @@ export default function Index() {
     <div className="min-h-screen relative">
       <AnimatedBackground />
       <AIChatbot />
+      <MessengerButtons />
       
       <header 
         className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm transition-all duration-300"
@@ -228,11 +238,36 @@ export default function Index() {
               <a href="#blog" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Блог" itemProp="url"><span itemProp="name">Блог</span></a>
               <a href="#faq" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Вопросы" itemProp="url"><span itemProp="name">FAQ</span></a>
             </nav>
-            <Button className="hidden md:flex" aria-label="Заказать обратный звонок от юриста">
-              <Icon name="Phone" size={18} className="mr-2" />
-              Заказать звонок
-            </Button>
+            <div className="flex items-center gap-4">
+              <Button className="hidden md:flex" aria-label="Заказать обратный звонок от юриста">
+                <Icon name="Phone" size={18} className="mr-2" />
+                Заказать звонок
+              </Button>
+              <button
+                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+                className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+                aria-label="Открыть меню"
+              >
+                <Icon name={mobileMenuOpen ? "X" : "Menu"} size={24} />
+              </button>
+            </div>
           </div>
+
+          {mobileMenuOpen && (
+            <div className="md:hidden py-4 border-t animate-fade-in">
+              <nav className="flex flex-col gap-4">
+                <a href="#services" onClick={() => setMobileMenuOpen(false)} className="text-foreground hover:text-primary transition-colors font-medium py-2">Услуги</a>
+                <a href="#tariffs" onClick={() => setMobileMenuOpen(false)} className="text-foreground hover:text-primary transition-colors font-medium py-2">Тарифы</a>
+                <a href="#cases" onClick={() => setMobileMenuOpen(false)} className="text-foreground hover:text-primary transition-colors font-medium py-2">Практика</a>
+                <a href="#faq" onClick={() => setMobileMenuOpen(false)} className="text-foreground hover:text-primary transition-colors font-medium py-2">FAQ</a>
+                <a href="#contact" onClick={() => setMobileMenuOpen(false)} className="text-foreground hover:text-primary transition-colors font-medium py-2">Контакты</a>
+                <Button className="w-full mt-2">
+                  <Icon name="Phone" size={18} className="mr-2" />
+                  Заказать звонок
+                </Button>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
@@ -295,6 +330,48 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-7xl">
+          <div className="grid md:grid-cols-2 gap-12 items-start">
+            <div>
+              <Badge className="mb-4 text-base px-4 py-2">Бесплатная помощь</Badge>
+              <h2 className="text-4xl md:text-5xl font-bold mb-6">Получите юридическую консультацию прямо сейчас</h2>
+              <p className="text-xl text-muted-foreground mb-8">
+                Опишите вашу ситуацию, и наш специалист свяжется с вами в течение 15 минут. Первая консультация абсолютно бесплатна!
+              </p>
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle" size={24} className="text-green-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-semibold">Ответ за 15 минут</div>
+                    <div className="text-sm text-muted-foreground">Перезвоним в удобное для вас время</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle" size={24} className="text-green-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-semibold">Полностью бесплатно</div>
+                    <div className="text-sm text-muted-foreground">Никаких скрытых платежей</div>
+                  </div>
+                </div>
+                <div className="flex items-start gap-3">
+                  <Icon name="CheckCircle" size={24} className="text-green-500 flex-shrink-0 mt-1" />
+                  <div>
+                    <div className="font-semibold">Опытные юристы</div>
+                    <div className="text-sm text-muted-foreground">Подберём специалиста под вашу задачу</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div>
+              <FreeConsultationForm />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <StatsCounters />
 
       <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-muted/30 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -585,7 +662,21 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-6 relative overflow-hidden bg-gradient-to-br from-blue-50/40 via-white to-indigo-50/30">
+      <SuccessCases />
+
+      <section className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-7xl">
+          <PriceCalculator />
+        </div>
+      </section>
+
+      <ReviewsWithPhotos />
+
+      <FAQAccordion />
+
+      <OfficeLocation />
+
+      <section id="reviews_old" className="py-20 px-6 relative overflow-hidden bg-gradient-to-br from-blue-50/40 via-white to-indigo-50/30" style={{display: 'none'}}>
         <div className="absolute inset-0 opacity-[0.03]">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233b82f6' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
