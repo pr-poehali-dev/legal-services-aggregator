@@ -237,8 +237,7 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="relative text-white py-20 md:py-32 px-6 overflow-hidden">
-        <CourtBackgroundSlider />
+      <section className="relative text-white py-20 md:py-32 px-6 overflow-hidden bg-gradient-to-br from-primary via-blue-700 to-blue-900">
         
         <style>{`
           @keyframes fadeInOut {
