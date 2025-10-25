@@ -68,14 +68,14 @@ const CourtBackgroundSlider = () => {
       ))}
       <div className="absolute inset-0 bg-gradient-to-br from-primary/85 via-blue-900/75 to-blue-950/85 backdrop-blur-[1px]"></div>
       
-      <div className={`absolute top-8 right-8 z-20 transition-all duration-500 ${
+      <div className={`absolute top-8 left-1/2 md:left-auto md:right-8 -translate-x-1/2 md:translate-x-0 z-20 transition-all duration-500 ${
         currentIndex !== null ? 'opacity-100 translate-y-0' : 'opacity-0 -translate-y-4'
       }`}>
-        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-6 py-4 shadow-2xl text-right">
-          <h3 className="text-2xl md:text-3xl font-bold text-white mb-1">
+        <div className="bg-white/10 backdrop-blur-md border border-white/20 rounded-lg px-4 py-3 md:px-6 md:py-4 shadow-2xl text-center md:text-right max-w-xs md:max-w-sm">
+          <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-white mb-1">
             {courtImages[currentIndex].title}
           </h3>
-          <p className="text-sm md:text-base text-blue-100">
+          <p className="text-xs md:text-sm lg:text-base text-blue-100">
             {courtImages[currentIndex].subtitle}
           </p>
         </div>
