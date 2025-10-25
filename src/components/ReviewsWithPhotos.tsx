@@ -67,7 +67,7 @@ const reviews = [
 
 const ReviewsWithPhotos = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+    <section className="py-20 px-6 bg-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-5">
         <div className="absolute top-20 left-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-20 right-10 w-96 h-96 bg-indigo-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>

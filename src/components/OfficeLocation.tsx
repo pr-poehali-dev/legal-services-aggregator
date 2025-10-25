@@ -4,7 +4,7 @@ import Icon from '@/components/ui/icon';
 
 const OfficeLocation = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100">
+    <section className="py-20 px-6 bg-white">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Наш офис</h2>

@@ -58,9 +58,7 @@ const Counter = ({ end, duration = 2000, suffix = '', label, icon }: CounterProp
   return (
     <div ref={counterRef} className="text-center w-full">
       <div className="mb-4 flex justify-center">
-        <div className="transition-transform duration-300 hover:scale-125">
-          <Icon name={icon as any} size={48} className="text-primary" />
-        </div>
+        <Icon name={icon as any} size={48} className="text-primary transition-transform duration-300 group-hover:scale-125" />
       </div>
       <div className="text-5xl md:text-6xl font-bold text-primary mb-2">
         {count.toLocaleString('ru')}{suffix}
@@ -79,7 +77,7 @@ const StatsCounters = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
+    <section className="py-20 px-6 bg-white relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -95,7 +93,7 @@ const StatsCounters = () => {
           {counters.map((counter, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 py-12 px-6"
+              className="group bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 py-12 px-6"
             >
               <Counter {...counter} />
             </div>
