@@ -56,9 +56,11 @@ const Counter = ({ end, duration = 2000, suffix = '', label, icon }: CounterProp
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={counterRef} className="text-center flex flex-col items-center justify-center w-full">
-      <div className="mb-4 transition-transform duration-300 hover:scale-125">
-        <Icon name={icon as any} size={48} className="mx-auto text-primary" />
+    <div ref={counterRef} className="text-center w-full">
+      <div className="mb-4 flex justify-center">
+        <div className="transition-transform duration-300 hover:scale-125">
+          <Icon name={icon as any} size={48} className="text-primary" />
+        </div>
       </div>
       <div className="text-5xl md:text-6xl font-bold text-primary mb-2">
         {count.toLocaleString('ru')}{suffix}
@@ -89,11 +91,11 @@ const StatsCounters = () => {
           <p className="text-xl text-muted-foreground">Результаты, которым доверяют тысячи клиентов</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-items-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {counters.map((counter, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 py-12 px-8 flex items-center justify-center w-full"
+              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 py-12 px-6"
             >
               <Counter {...counter} />
             </div>
