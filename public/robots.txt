@@ -1,7 +1,13 @@
+User-agent: *
+Allow: /
+
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
+Allow: /
+
+User-agent: Yandex
 Allow: /
 
 User-agent: Twitterbot
@@ -10,5 +16,12 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-User-agent: *
-Allow: /
+# Sitemaps
+Sitemap: https://yoursite.com/sitemap.xml
+
+# Block admin and internal pages (if any)
+Disallow: /admin/
+Disallow: /api/
+
+# Crawl-delay for better server performance
+Crawl-delay: 1

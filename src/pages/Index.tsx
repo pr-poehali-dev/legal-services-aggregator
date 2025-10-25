@@ -215,17 +215,17 @@ export default function Index() {
                 <Icon name="Scale" size={24} className="text-white" />
               </div>
               <div>
-                <h1 className="text-xl font-bold text-foreground">ЮрПомощь</h1>
+                <div className="text-xl font-bold text-foreground">ЮрПомощь</div>
                 <p className="text-xs text-muted-foreground">Агрегатор юридических услуг</p>
               </div>
             </div>
-            <nav className="hidden md:flex gap-8">
-              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium">Услуги</a>
-              <a href="#tariffs" className="text-foreground hover:text-primary transition-colors font-medium">Тарифы</a>
-              <a href="#reviews" className="text-foreground hover:text-primary transition-colors font-medium">Отзывы</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">Контакты</a>
+            <nav className="hidden md:flex gap-8" aria-label="Основная навигация">
+              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Услуги">Услуги</a>
+              <a href="#tariffs" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Тарифы">Тарифы</a>
+              <a href="#reviews" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Отзывы">Отзывы</a>
+              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Контакты">Контакты</a>
             </nav>
-            <Button className="hidden md:flex">
+            <Button className="hidden md:flex" aria-label="Заказать обратный звонок от юриста">
               <Icon name="Phone" size={18} className="mr-2" />
               Заказать звонок
             </Button>
@@ -262,9 +262,9 @@ export default function Index() {
                 <Icon name="Sparkles" size={16} className="mr-2" />
                 Агрегатор юридических услуг #1 в России
               </Badge>
-              <h2 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
+              <h1 className="text-4xl md:text-6xl font-bold mb-6 leading-tight">
                 Найдем лучшего юриста для вашей задачи за 15 минут
-              </h2>
+              </h1>
               <p className="text-xl md:text-2xl mb-8 text-blue-50 leading-relaxed">
                 Подбираем проверенных специалистов из базы 500+ юристов. 
                 Бесплатная консультация и гарантия результата.
