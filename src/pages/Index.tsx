@@ -371,15 +371,15 @@ export default function Index() {
       <section id="cases" className="py-20 px-6 bg-white relative overflow-hidden">
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
-            <Badge className="mb-4 text-base px-4 py-2">Судебная практика</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Актуальные решения судов</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+            <Badge className="mb-4 text-base px-4 py-2 reveal-text">Судебная практика</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Актуальные решения судов</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto reveal-text stagger-2">
               Важные прецеденты 2024-2025 года, которые меняют правоприменительную практику
             </p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary reveal-text stagger-1">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
@@ -410,7 +410,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary reveal-text stagger-2">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
@@ -441,7 +441,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary reveal-text stagger-3">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
@@ -472,7 +472,7 @@ export default function Index() {
               </CardContent>
             </Card>
 
-            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary">
+            <Card className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-3 hover:scale-105 bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary reveal-text stagger-4">
               <CardHeader>
                 <div className="flex items-start justify-between mb-3">
                   <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
@@ -504,10 +504,14 @@ export default function Index() {
             </Card>
           </div>
 
-          <div className="text-center mt-12">
-            <Button size="lg" className="text-base">
+          <div className="text-center mt-12 space-y-4 reveal-text stagger-5">
+            <Button size="lg" className="text-base mr-4">
               <Icon name="Scale" size={18} className="mr-2" />
               Смотреть всю судебную практику
+            </Button>
+            <Button size="lg" variant="outline" className="text-base">
+              <Icon name="MessageCircle" size={18} className="mr-2" />
+              Получить консультацию
             </Button>
           </div>
         </div>
