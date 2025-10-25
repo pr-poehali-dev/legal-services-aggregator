@@ -257,8 +257,25 @@ export default function Index() {
         </div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
-          <div className="grid lg:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
+          <div className="relative">
+            <div className="hidden lg:block absolute -top-20 -right-20 w-[500px] h-[500px] z-0">
+              <div 
+                className="relative"
+                style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+              >
+                <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-accent/30 rounded-full blur-3xl"></div>
+                <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-8 border-white/20 backdrop-blur-sm">
+                  <img 
+                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=600&fit=crop"
+                    alt="Юридические услуги"
+                    className="w-full h-full object-cover animate-scale-in"
+                    loading="lazy"
+                  />
+                </div>
+              </div>
+            </div>
+
+            <div className="max-w-3xl animate-fade-in relative z-10">
               <Badge className="mb-6 bg-secondary text-white border-0 text-base px-4 py-2">
                 <Icon name="Sparkles" size={16} className="mr-2" />
                 Агрегатор юридических услуг #1 в России
@@ -298,20 +315,6 @@ export default function Index() {
                     <div className="text-sm text-blue-100">{stat.label}</div>
                   </div>
                 ))}
-              </div>
-            </div>
-            
-            <div className="hidden lg:block">
-              <div 
-                className="relative"
-                style={{ transform: `translateY(${scrollY * 0.15}px)` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-3xl blur-2xl"></div>
-                <img 
-                  src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800"
-                  alt="Юридические услуги"
-                  className="relative rounded-3xl shadow-2xl w-full animate-scale-in"
-                />
               </div>
             </div>
           </div>
