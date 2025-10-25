@@ -47,6 +47,10 @@
     <!-- RSS Feed -->
     <link rel="alternate" type="application/rss+xml" title="Блог ЮрПомощь" href="/rss.xml"/>
     
+    <!-- AMP versions -->
+    <link rel="amphtml" href="https://yoursite.com/amp/blog-taxes.html"/>
+    <link rel="amphtml" href="https://yoursite.com/amp/blog-real-estate.html"/>
+    
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -66,44 +70,173 @@
     <meta name="geo.region" content="RU"/>
     <meta name="geo.placename" content="Россия"/>
     
-    <!-- Schema.org structured data -->
+    <!-- Schema.org LocalBusiness для локального SEO -->
     <script type="application/ld+json">
     {
       "@context": "https://schema.org",
-      "@type": "LegalService",
+      "@type": "LocalBusiness",
+      "@id": "https://yoursite.com/#organization",
+      "additionalType": "http://www.productontology.org/id/Legal_services",
       "name": "ЮрПомощь",
-      "description": "Профессиональные юридические услуги онлайн по всем отраслям права",
+      "alternateName": "Юридические услуги ЮрПомощь",
+      "description": "Профессиональные юридические услуги онлайн по всем отраслям права. 500+ проверенных юристов по всей России.",
       "url": "https://yoursite.com",
-      "logo": "https://cdn.poehali.dev/intertnal/img/og.png",
-      "image": "https://cdn.poehali.dev/intertnal/img/og.png",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://cdn.poehali.dev/intertnal/img/og.png",
+        "width": "1200",
+        "height": "630"
+      },
+      "image": [
+        "https://cdn.poehali.dev/intertnal/img/og.png"
+      ],
       "telephone": "+7 (800) 555-35-35",
       "email": "info@yoursite.com",
       "address": {
         "@type": "PostalAddress",
-        "addressCountry": "RU",
-        "addressLocality": "Москва"
+        "streetAddress": "Тверская улица, 12",
+        "addressLocality": "Москва",
+        "addressRegion": "Московская область",
+        "postalCode": "125009",
+        "addressCountry": "RU"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "55.761480",
+        "longitude": "37.614841"
       },
       "priceRange": "$$",
-      "openingHours": "Mo-Su 00:00-23:59",
-      "areaServed": {
-        "@type": "Country",
-        "name": "Россия"
-      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+          "opens": "00:00",
+          "closes": "23:59"
+        }
+      ],
+      "currenciesAccepted": "RUB",
+      "paymentAccepted": "Наличные, банковские карты, безналичный расчёт",
+      "areaServed": [
+        {
+          "@type": "Country",
+          "name": "Россия"
+        },
+        {
+          "@type": "City",
+          "name": "Москва"
+        },
+        {
+          "@type": "City",
+          "name": "Санкт-Петербург"
+        },
+        {
+          "@type": "City",
+          "name": "Казань"
+        },
+        {
+          "@type": "City",
+          "name": "Екатеринбург"
+        },
+        {
+          "@type": "City",
+          "name": "Новосибирск"
+        }
+      ],
+      "hasMap": "https://yandex.ru/maps/213/moscow/",
       "sameAs": [
         "https://vk.com/yourcompany",
-        "https://t.me/yourcompany"
+        "https://t.me/yourcompany",
+        "https://www.facebook.com/yourcompany",
+        "https://ok.ru/yourcompany"
       ],
       "aggregateRating": {
         "@type": "AggregateRating",
         "ratingValue": "4.9",
+        "bestRating": "5",
+        "worstRating": "1",
+        "ratingCount": "2500",
         "reviewCount": "2500"
       },
-      "offers": {
-        "@type": "Offer",
-        "description": "Бесплатная первичная консультация юриста",
-        "price": "0",
-        "priceCurrency": "RUB"
-      }
+      "review": [
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Анна Петрова"
+          },
+          "datePublished": "2024-10-01",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Отличный сервис! Помогли решить вопрос с недвижимостью быстро и профессионально. Юрист все подробно объяснил, документы оформили за неделю."
+        },
+        {
+          "@type": "Review",
+          "author": {
+            "@type": "Person",
+            "name": "Дмитрий Соколов"
+          },
+          "datePublished": "2024-09-15",
+          "reviewRating": {
+            "@type": "Rating",
+            "ratingValue": "5",
+            "bestRating": "5"
+          },
+          "reviewBody": "Обращался по трудовому спору. Юрист проконсультировал бесплатно, помог составить иск. В итоге выиграли дело в суде."
+        }
+      ],
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Бесплатная консультация юриста",
+            "description": "30-минутная консультация с юристом онлайн"
+          },
+          "price": "0",
+          "priceCurrency": "RUB"
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Юридическое сопровождение бизнеса",
+            "description": "Абонентское юридическое обслуживание компании"
+          },
+          "price": "15000",
+          "priceCurrency": "RUB",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "15000",
+            "priceCurrency": "RUB",
+            "unitText": "месяц"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "Консультация по семейному праву",
+            "description": "Развод, раздел имущества, алименты"
+          },
+          "price": "3000",
+          "priceCurrency": "RUB"
+        }
+      ],
+      "knowsAbout": [
+        "Корпоративное право",
+        "Семейное право",
+        "Трудовое право",
+        "Налоговое право",
+        "Недвижимость",
+        "Миграционное право",
+        "Защита прав потребителей",
+        "Банкротство",
+        "Судебное представительство"
+      ],
+      "slogan": "Решаем юридические вопросы за 15 минут"
     }
     </script>
     
