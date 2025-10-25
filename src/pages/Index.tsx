@@ -7,16 +7,8 @@ import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 import AnimatedBackground from '@/components/AnimatedBackground';
-import OnlineConsultant from '@/components/OnlineConsultant';
-import CourtBackgroundSlider from '@/components/CourtBackgroundSlider';
 import FloatingMessengers from '@/components/FloatingMessengers';
-import PriceCalculator from '@/components/PriceCalculator';
-import LawyersSection from '@/components/LawyersSection';
-import BookingCalendar from '@/components/BookingCalendar';
 import AIChatbot from '@/components/AIСhatbot';
-import AnimatedCounters from '@/components/AnimatedCounters';
-import ExitPopup from '@/components/ExitPopup';
-import INNChecker from '@/components/INNChecker';
 
 const services = [
   {
@@ -211,7 +203,6 @@ export default function Index() {
       <AnimatedBackground />
       <FloatingMessengers />
       <AIChatbot />
-      <ExitPopup />
       
       <header 
         className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm transition-all duration-300"
@@ -671,19 +662,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="calculator" className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-7xl">
-          <PriceCalculator />
-        </div>
-      </section>
 
-      <section id="booking" className="py-20 px-6 bg-gradient-to-br from-orange-50/40 via-white to-yellow-50/30">
-        <div className="container mx-auto max-w-7xl">
-          <BookingCalendar />
-        </div>
-      </section>
-
-      <INNChecker />
 
       <section id="contact" className="py-20 px-6 bg-gradient-to-br from-primary to-blue-800 text-white relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-700 to-blue-900 animate-gradient"></div>
