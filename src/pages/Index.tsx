@@ -379,7 +379,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -421,7 +421,7 @@ export default function Index() {
 
       <StatsCounters />
 
-      <section id="services" className="py-20 px-6 bg-gray-50 relative overflow-hidden">
+      <section id="services" className="py-20 px-6 bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-primary rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '3s' }}></div>
@@ -473,7 +473,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="cases" className="py-20 px-6 relative overflow-hidden bg-gray-50">
+      <section id="cases" className="py-20 px-6 relative overflow-hidden bg-white">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e40af' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -631,7 +631,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="tariffs" className="py-20 px-6 bg-gray-50 relative overflow-hidden">
+      <section id="tariffs" className="py-20 px-6 bg-white relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-40 left-20 w-[450px] h-[450px] bg-accent rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute bottom-40 right-20 w-[450px] h-[450px] bg-primary rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
@@ -712,7 +712,7 @@ export default function Index() {
 
       <SuccessCases />
 
-      <section className="py-20 px-6 bg-gray-50">
+      <section className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
           <PriceCalculator />
         </div>
