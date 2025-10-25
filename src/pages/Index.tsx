@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -142,6 +142,26 @@ export default function Index() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const { toast } = useToast();
 
+  useEffect(() => {
+    const observerOptions = {
+      threshold: 0.1,
+      rootMargin: '0px 0px -100px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('revealed');
+        }
+      });
+    }, observerOptions);
+
+    const elements = document.querySelectorAll('.reveal-text');
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
@@ -153,7 +173,7 @@ export default function Index() {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-white border-b sticky top-0 z-50 shadow-sm">
+      <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -239,10 +259,10 @@ export default function Index() {
 
       <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-muted/30">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 text-base px-4 py-2">Направления работы</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Юридические услуги по всем отраслям права</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-base px-4 py-2 reveal-text">Направления работы</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Юридические услуги по всем отраслям права</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto reveal-text stagger-2">
               В нашей базе более 500 юристов с опытом от 5 лет. Подберем специалиста 
               под вашу задачу с учетом специализации и региона.
             </p>
@@ -252,8 +272,7 @@ export default function Index() {
             {services.map((service, index) => (
               <Card 
                 key={service.id} 
-                className="group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary reveal-text stagger-${(index % 6) + 1}`}
               >
                 <CardHeader>
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
@@ -284,10 +303,10 @@ export default function Index() {
 
       <section id="tariffs" className="py-20 px-6 bg-muted/50">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 text-base px-4 py-2">Прозрачные цены</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Выберите формат сотрудничества</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-base px-4 py-2 reveal-text">Прозрачные цены</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Выберите формат сотрудничества</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto reveal-text stagger-2">
               Фиксированная стоимость без скрытых платежей. Первая консультация — бесплатно.
             </p>
           </div>
@@ -296,12 +315,11 @@ export default function Index() {
             {tariffs.map((tariff, index) => (
               <Card 
                 key={tariff.id} 
-                className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-2 animate-fade-in ${
+                className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-2 reveal-text stagger-${index + 3} ${
                   tariff.popular 
                     ? 'border-4 border-primary shadow-2xl scale-105' 
                     : 'border-2 hover:border-primary hover:shadow-xl'
                 }`}
-                style={{ animationDelay: `${index * 0.1}s` }}
               >
                 {tariff.popular && (
                   <div className="absolute top-0 right-0 bg-secondary text-white px-6 py-2 text-sm font-bold">
@@ -359,10 +377,10 @@ export default function Index() {
 
       <section id="reviews" className="py-20 px-6 bg-white">
         <div className="container mx-auto max-w-7xl">
-          <div className="text-center mb-16 animate-fade-in">
-            <Badge className="mb-4 text-base px-4 py-2">Отзывы клиентов</Badge>
-            <h2 className="text-4xl md:text-5xl font-bold mb-6">Что говорят о нас клиенты</h2>
-            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-base px-4 py-2 reveal-text">Отзывы клиентов</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Что говорят о нас клиенты</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto reveal-text stagger-2">
               Более 2 500 успешно решенных дел. Средняя оценка — 4.9 из 5.
             </p>
           </div>
@@ -371,8 +389,7 @@ export default function Index() {
             {reviews.map((review, index) => (
               <Card 
                 key={review.id} 
-                className="hover:shadow-xl transition-all duration-300 border-2 animate-fade-in"
-                style={{ animationDelay: `${index * 0.1}s` }}
+                className={`hover:shadow-xl transition-all duration-300 border-2 reveal-text stagger-${index + 3}`}
               >
                 <CardHeader>
                   <div className="flex items-start justify-between mb-4">
@@ -412,19 +429,19 @@ export default function Index() {
       <section id="contact" className="py-20 px-6 bg-gradient-to-br from-primary to-blue-800 text-white">
         <div className="container mx-auto max-w-5xl">
           <div className="grid md:grid-cols-2 gap-12 items-center">
-            <div className="animate-fade-in">
-              <Badge className="mb-6 bg-secondary text-white border-0 text-base px-4 py-2">
+            <div>
+              <Badge className="mb-6 bg-secondary text-white border-0 text-base px-4 py-2 reveal-text">
                 Бесплатная консультация
               </Badge>
-              <h2 className="text-4xl md:text-5xl font-bold mb-6">
+              <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">
                 Получите консультацию юриста прямо сейчас
               </h2>
-              <p className="text-xl text-blue-50 mb-8">
+              <p className="text-xl text-blue-50 mb-8 reveal-text stagger-2">
                 Оставьте заявку — мы перезвоним в течение 15 минут, 
                 проанализируем вашу ситуацию и предложим решение.
               </p>
               <div className="space-y-4">
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 reveal-text stagger-3">
                   <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon name="Clock" size={24} />
                   </div>
@@ -433,7 +450,7 @@ export default function Index() {
                     <div className="text-blue-100">Перезваниваем за 15 минут</div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 reveal-text stagger-4">
                   <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon name="ShieldCheck" size={24} />
                   </div>
@@ -442,7 +459,7 @@ export default function Index() {
                     <div className="text-blue-100">Ваши данные под защитой</div>
                   </div>
                 </div>
-                <div className="flex items-start gap-4">
+                <div className="flex items-start gap-4 reveal-text stagger-5">
                   <div className="w-12 h-12 bg-secondary rounded-xl flex items-center justify-center flex-shrink-0">
                     <Icon name="Gift" size={24} />
                   </div>
@@ -454,7 +471,7 @@ export default function Index() {
               </div>
             </div>
             
-            <Card className="animate-scale-in shadow-2xl">
+            <Card className="shadow-2xl reveal-text stagger-2">
               <CardHeader>
                 <CardTitle className="text-2xl">Заявка на консультацию</CardTitle>
                 <CardDescription>Заполните форму и мы свяжемся с вами</CardDescription>
