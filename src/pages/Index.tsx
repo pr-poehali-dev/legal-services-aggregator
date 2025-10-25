@@ -219,10 +219,11 @@ export default function Index() {
                 <p className="text-xs text-muted-foreground">Агрегатор юридических услуг</p>
               </div>
             </div>
-            <nav className="hidden md:flex gap-8" aria-label="Основная навигация">
+            <nav className="hidden md:flex gap-6" aria-label="Основная навигация">
               <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Услуги">Услуги</a>
               <a href="#tariffs" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Тарифы">Тарифы</a>
-              <a href="#reviews" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Отзывы">Отзывы</a>
+              <a href="#cases" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Судебная практика">Практика</a>
+              <a href="#faq" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Вопросы">FAQ</a>
               <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Контакты">Контакты</a>
             </nav>
             <Button className="hidden md:flex" aria-label="Заказать обратный звонок от юриста">
@@ -760,6 +761,91 @@ export default function Index() {
                 </form>
               </CardContent>
             </Card>
+          </div>
+        </div>
+      </section>
+
+      <section id="faq" className="py-20 px-6 bg-white">
+        <div className="container mx-auto max-w-4xl">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-base px-4 py-2 reveal-text">Частые вопросы</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Ответы на популярные вопросы</h2>
+            <p className="text-xl text-muted-foreground reveal-text stagger-2">
+              Собрали самые частые вопросы клиентов
+            </p>
+          </div>
+
+          <div className="space-y-4">
+            <details className="group bg-muted/30 rounded-lg p-6 cursor-pointer hover:bg-muted/50 transition-colors reveal-text stagger-1">
+              <summary className="flex items-center justify-between font-semibold text-lg">
+                <span>Сколько стоит консультация юриста?</span>
+                <Icon name="ChevronDown" size={20} className="group-open:rotate-180 transition-transform" />
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Первичная консультация (30 минут) — бесплатно. Стандартная консультация — от 3 000 ₽. 
+                Стоимость дальнейшего сопровождения зависит от сложности дела и выбранного тарифа. 
+                Предлагаем абонентское обслуживание от 15 000 ₽/месяц для бизнеса.
+              </p>
+            </details>
+
+            <details className="group bg-muted/30 rounded-lg p-6 cursor-pointer hover:bg-muted/50 transition-colors reveal-text stagger-2">
+              <summary className="flex items-center justify-between font-semibold text-lg">
+                <span>Как быстро можно получить консультацию?</span>
+                <Icon name="ChevronDown" size={20} className="group-open:rotate-180 transition-transform" />
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Подбираем юриста в течение 2 часов после обращения. Экстренная консультация возможна 
+                в день обращения. Работаем круглосуточно, включая выходные и праздники.
+              </p>
+            </details>
+
+            <details className="group bg-muted/30 rounded-lg p-6 cursor-pointer hover:bg-muted/50 transition-colors reveal-text stagger-3">
+              <summary className="flex items-center justify-between font-semibold text-lg">
+                <span>Какие документы нужны для консультации?</span>
+                <Icon name="ChevronDown" size={20} className="group-open:rotate-180 transition-transform" />
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Для первичной консультации документы не обязательны — достаточно описать ситуацию. 
+                Юрист подскажет, какие документы потребуются для дальнейшей работы. Все документы 
+                можно передать в электронном виде через личный кабинет.
+              </p>
+            </details>
+
+            <details className="group bg-muted/30 rounded-lg p-6 cursor-pointer hover:bg-muted/50 transition-colors reveal-text stagger-4">
+              <summary className="flex items-center justify-between font-semibold text-lg">
+                <span>Работаете ли вы полностью онлайн?</span>
+                <Icon name="ChevronDown" size={20} className="group-open:rotate-180 transition-transform" />
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Да, мы работаем полностью дистанционно: консультации по видеосвязи, документы через 
+                электронную подпись, оплата онлайн. При необходимости юрист может встретиться лично 
+                или представлять интересы в суде.
+              </p>
+            </details>
+
+            <details className="group bg-muted/30 rounded-lg p-6 cursor-pointer hover:bg-muted/50 transition-colors reveal-text stagger-5">
+              <summary className="flex items-center justify-between font-semibold text-lg">
+                <span>Гарантируете ли вы результат?</span>
+                <Icon name="ChevronDown" size={20} className="group-open:rotate-180 transition-transform" />
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Мы гарантируем профессиональный подход и добросовестную работу. Результат в юридических 
+                делах зависит от многих факторов, но мы делаем всё возможное для победы. 98% наших 
+                клиентов довольны результатом работы. Предоставляем юридическую гарантию на оказанные услуги.
+              </p>
+            </details>
+
+            <details className="group bg-muted/30 rounded-lg p-6 cursor-pointer hover:bg-muted/50 transition-colors reveal-text stagger-6">
+              <summary className="flex items-center justify-between font-semibold text-lg">
+                <span>Как происходит оплата услуг?</span>
+                <Icon name="ChevronDown" size={20} className="group-open:rotate-180 transition-transform" />
+              </summary>
+              <p className="mt-4 text-muted-foreground leading-relaxed">
+                Принимаем оплату банковскими картами, электронными деньгами, по безналичному расчёту для 
+                юридических лиц. Возможна оплата по этапам работы. Предоставляем полный пакет документов 
+                для отчётности (договор, акт, счёт).
+              </p>
+            </details>
           </div>
         </div>
       </section>
