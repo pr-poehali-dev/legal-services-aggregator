@@ -56,7 +56,7 @@ const Counter = ({ end, duration = 2000, suffix = '', label, icon }: CounterProp
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={counterRef} className="text-center p-6">
+    <div ref={counterRef} className="text-center p-8 flex flex-col items-center justify-center h-full">
       <div className="mb-4">
         <Icon name={icon as any} size={48} className="mx-auto text-primary" />
       </div>
@@ -93,7 +93,7 @@ const StatsCounters = () => {
           {counters.map((counter, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300"
+              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 min-h-[280px] flex items-center"
             >
               <Counter {...counter} />
             </div>
