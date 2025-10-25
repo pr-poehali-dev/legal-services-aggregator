@@ -34,13 +34,33 @@
     <meta name="twitter:description" content="500+ проверенных юристов. Бесплатная консультация. Помощь по всем отраслям права."/>
     <meta name="twitter:image" content="https://cdn.poehali.dev/intertnal/img/og.png"/>
     
+    <!-- Yandex meta tags -->
+    <meta name="yandex-verification" content="your-yandex-verification-code"/>
+    <meta name="format-detection" content="telephone=no"/>
+    <meta property="ya:ovs:upload_date" content="2024-10-25"/>
+    <meta property="ya:ovs:adult" content="false"/>
+    <meta property="ya:ovs:allow_embed" content="true"/>
+    
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg"/>
+    
+    <!-- RSS Feed -->
+    <link rel="alternate" type="application/rss+xml" title="Блог ЮрПомощь" href="/rss.xml"/>
     
     <!-- Preconnect for performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com"/>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
     <link rel="dns-prefetch" href="https://cdn.poehali.dev"/>
+    <link rel="dns-prefetch" href="https://mc.yandex.ru"/>
+    
+    <!-- Performance optimizations -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap&subset=cyrillic"/>
+    
+    <!-- Critical CSS for above-the-fold content -->
+    <style>
+      body { margin: 0; font-family: system-ui, -apple-system, sans-serif; }
+      .loader { position: fixed; inset: 0; display: flex; align-items: center; justify-content: center; background: white; z-index: 9999; }
+    </style>
     
     <!-- Geo Tags -->
     <meta name="geo.region" content="RU"/>
@@ -156,6 +176,86 @@
             "@type": "Answer",
             "text": "Принимаем оплату банковскими картами, электронными деньгами, по безналичному расчёту для юридических лиц. Возможна оплата по этапам работы. Предоставляем полный пакет документов для отчётности (договор, акт, счёт)."
           }
+        }
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Blog",
+      "name": "Блог ЮрПомощь",
+      "description": "Полезные статьи о праве, разборы судебных кейсов, актуальные изменения в законодательстве",
+      "url": "https://yoursite.com/#blog",
+      "publisher": {
+        "@type": "Organization",
+        "name": "ЮрПомощь",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://cdn.poehali.dev/intertnal/img/og.png"
+        }
+      },
+      "blogPost": [
+        {
+          "@type": "BlogPosting",
+          "headline": "Как законно уменьшить налоги для малого бизнеса в 2025 году",
+          "description": "Разбираем актуальные методы налоговой оптимизации: УСН, патент, самозанятость",
+          "datePublished": "2024-10-15",
+          "author": {
+            "@type": "Organization",
+            "name": "ЮрПомощь"
+          },
+          "keywords": "налоговая оптимизация, малый бизнес, УСН, патент"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Проверка квартиры перед покупкой: чек-лист из 15 пунктов",
+          "description": "Полный список документов, онлайн-сервисы, признаки мошенничества при покупке недвижимости",
+          "datePublished": "2024-10-10",
+          "author": {
+            "@type": "Organization",
+            "name": "ЮрПомощь"
+          },
+          "keywords": "покупка квартиры, проверка недвижимости, документы"
+        },
+        {
+          "@type": "BlogPosting",
+          "headline": "Незаконное увольнение: как защитить свои права и получить компенсацию",
+          "description": "Основания для увольнения, действия при незаконном увольнении, размеры компенсаций",
+          "datePublished": "2024-10-05",
+          "author": {
+            "@type": "Organization",
+            "name": "ЮрПомощь"
+          },
+          "keywords": "незаконное увольнение, трудовое право, компенсация"
+        }
+      ]
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Главная",
+          "item": "https://yoursite.com/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Услуги",
+          "item": "https://yoursite.com/#services"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "Блог",
+          "item": "https://yoursite.com/#blog"
         }
       ]
     }

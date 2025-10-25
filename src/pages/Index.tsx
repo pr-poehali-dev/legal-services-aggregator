@@ -219,12 +219,12 @@ export default function Index() {
                 <p className="text-xs text-muted-foreground">Агрегатор юридических услуг</p>
               </div>
             </div>
-            <nav className="hidden md:flex gap-6" aria-label="Основная навигация">
-              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Услуги">Услуги</a>
-              <a href="#tariffs" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Тарифы">Тарифы</a>
-              <a href="#cases" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Судебная практика">Практика</a>
-              <a href="#faq" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Вопросы">FAQ</a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Контакты">Контакты</a>
+            <nav className="hidden md:flex gap-6" aria-label="Основная навигация" itemScope itemType="http://schema.org/SiteNavigationElement">
+              <a href="#services" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Услуги" itemProp="url"><span itemProp="name">Услуги</span></a>
+              <a href="#tariffs" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Тарифы" itemProp="url"><span itemProp="name">Тарифы</span></a>
+              <a href="#cases" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Судебная практика" itemProp="url"><span itemProp="name">Практика</span></a>
+              <a href="#blog" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Блог" itemProp="url"><span itemProp="name">Блог</span></a>
+              <a href="#faq" className="text-foreground hover:text-primary transition-colors font-medium" aria-label="Перейти к разделу Вопросы" itemProp="url"><span itemProp="name">FAQ</span></a>
             </nav>
             <Button className="hidden md:flex" aria-label="Заказать обратный звонок от юриста">
               <Icon name="Phone" size={18} className="mr-2" />
@@ -846,6 +846,108 @@ export default function Index() {
                 для отчётности (договор, акт, счёт).
               </p>
             </details>
+          </div>
+        </div>
+      </section>
+
+      <section id="blog" className="py-20 px-6 bg-muted/30">
+        <div className="container mx-auto max-w-7xl">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-base px-4 py-2 reveal-text">Блог</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Полезные статьи о праве</h2>
+            <p className="text-xl text-muted-foreground reveal-text stagger-2">
+              Актуальная информация и разборы сложных юридических вопросов
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <article className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 reveal-text stagger-1">
+              <div className="aspect-video bg-gradient-to-br from-primary to-blue-600 flex items-center justify-center">
+                <Icon name="FileText" size={48} className="text-white opacity-50" />
+              </div>
+              <div className="p-6">
+                <Badge className="mb-3">Налоговое право</Badge>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  Как законно уменьшить налоги для малого бизнеса в 2025 году
+                </h3>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  Разбираем актуальные методы налоговой оптимизации: УСН, патент, самозанятость. 
+                  Пошаговая инструкция с примерами и расчётами экономии.
+                </p>
+                <div className="flex items-center justify-between text-sm text-muted-foreground">
+                  <span>15 октября 2024</span>
+                  <span className="flex items-center gap-1">
+                    <Icon name="Clock" size={14} />
+                    5 мин чтения
+                  </span>
+                </div>
+                <Button variant="ghost" className="w-full mt-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                  Читать статью
+                  <Icon name="ArrowRight" size={16} className="ml-2" />
+                </Button>
+              </div>
+            </article>
+
+            <article className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 reveal-text stagger-2">
+              <div className="aspect-video bg-gradient-to-br from-secondary to-orange-600 flex items-center justify-center">
+                <Icon name="Home" size={48} className="text-white opacity-50" />
+              </div>
+              <div className="p-6">
+                <Badge className="mb-3">Недвижимость</Badge>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  Проверка квартиры перед покупкой: чек-лист из 15 пунктов
+                </h3>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  Что проверить перед сделкой, чтобы не потерять деньги? Полный список документов, 
+                  онлайн-сервисы, признаки мошенничества.
+                </p>
+                <div className="flex items-center justify-between text-sm text-muted-foreground">
+                  <span>10 октября 2024</span>
+                  <span className="flex items-center gap-1">
+                    <Icon name="Clock" size={14} />
+                    7 мин чтения
+                  </span>
+                </div>
+                <Button variant="ghost" className="w-full mt-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                  Читать статью
+                  <Icon name="ArrowRight" size={16} className="ml-2" />
+                </Button>
+              </div>
+            </article>
+
+            <article className="group bg-white rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 reveal-text stagger-3">
+              <div className="aspect-video bg-gradient-to-br from-green-600 to-emerald-600 flex items-center justify-center">
+                <Icon name="Briefcase" size={48} className="text-white opacity-50" />
+              </div>
+              <div className="p-6">
+                <Badge className="mb-3">Трудовое право</Badge>
+                <h3 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors">
+                  Незаконное увольнение: как защитить свои права и получить компенсацию
+                </h3>
+                <p className="text-muted-foreground mb-4 text-sm leading-relaxed">
+                  Разбираем основания для увольнения, действия при незаконном увольнении, 
+                  размеры компенсаций. Реальные судебные кейсы 2024 года.
+                </p>
+                <div className="flex items-center justify-between text-sm text-muted-foreground">
+                  <span>5 октября 2024</span>
+                  <span className="flex items-center gap-1">
+                    <Icon name="Clock" size={14} />
+                    6 мин чтения
+                  </span>
+                </div>
+                <Button variant="ghost" className="w-full mt-4 group-hover:bg-primary group-hover:text-white transition-colors">
+                  Читать статью
+                  <Icon name="ArrowRight" size={16} className="ml-2" />
+                </Button>
+              </div>
+            </article>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" variant="outline" className="text-base">
+              <Icon name="BookOpen" size={18} className="mr-2" />
+              Смотреть все статьи
+            </Button>
           </div>
         </div>
       </section>

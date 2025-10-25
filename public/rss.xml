@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Блог ЮрПомощь — Юридические услуги онлайн</title>
+    <link>https://yoursite.com/#blog</link>
+    <description>Полезные статьи о праве, разборы судебных кейсов, актуальные изменения в законодательстве</description>
+    <language>ru</language>
+    <lastBuildDate>Fri, 25 Oct 2024 12:00:00 +0300</lastBuildDate>
+    <atom:link href="https://yoursite.com/rss.xml" rel="self" type="application/rss+xml"/>
+    
+    <item>
+      <title>Как законно уменьшить налоги для малого бизнеса в 2025 году</title>
+      <link>https://yoursite.com/#blog</link>
+      <description>Разбираем актуальные методы налоговой оптимизации: УСН, патент, самозанятость. Пошаговая инструкция с примерами и расчётами экономии.</description>
+      <category>Налоговое право</category>
+      <pubDate>Tue, 15 Oct 2024 10:00:00 +0300</pubDate>
+      <dc:creator>ЮрПомощь</dc:creator>
+      <guid>https://yoursite.com/#blog-tax-optimization-2025</guid>
+    </item>
+    
+    <item>
+      <title>Проверка квартиры перед покупкой: чек-лист из 15 пунктов</title>
+      <link>https://yoursite.com/#blog</link>
+      <description>Что проверить перед сделкой, чтобы не потерять деньги? Полный список документов, онлайн-сервисы, признаки мошенничества.</description>
+      <category>Недвижимость</category>
+      <pubDate>Thu, 10 Oct 2024 14:00:00 +0300</pubDate>
+      <dc:creator>ЮрПомощь</dc:creator>
+      <guid>https://yoursite.com/#blog-apartment-checklist</guid>
+    </item>
+    
+    <item>
+      <title>Незаконное увольнение: как защитить свои права и получить компенсацию</title>
+      <link>https://yoursite.com/#blog</link>
+      <description>Разбираем основания для увольнения, действия при незаконном увольнении, размеры компенсаций. Реальные судебные кейсы 2024 года.</description>
+      <category>Трудовое право</category>
+      <pubDate>Sat, 05 Oct 2024 11:00:00 +0300</pubDate>
+      <dc:creator>ЮрПомощь</dc:creator>
+      <guid>https://yoursite.com/#blog-illegal-dismissal</guid>
+    </item>
+    
+  </channel>
+</rss>
