@@ -7,7 +7,6 @@ import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 import AnimatedBackground from '@/components/AnimatedBackground';
-import FloatingMessengers from '@/components/FloatingMessengers';
 import AIChatbot from '@/components/AIСhatbot';
 import CourtBackgroundSlider from '@/components/CourtBackgroundSlider';
 
@@ -202,7 +201,6 @@ export default function Index() {
   return (
     <div className="min-h-screen relative">
       <AnimatedBackground />
-      <FloatingMessengers />
       <AIChatbot />
       
       <header 
