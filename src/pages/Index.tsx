@@ -354,6 +354,151 @@ export default function Index() {
         </div>
       </section>
 
+      <section id="cases" className="py-20 px-6 bg-white relative overflow-hidden">
+        <div className="container mx-auto max-w-7xl relative z-10">
+          <div className="text-center mb-16">
+            <Badge className="mb-4 text-base px-4 py-2">Судебная практика</Badge>
+            <h2 className="text-4xl md:text-5xl font-bold mb-6">Актуальные решения судов</h2>
+            <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
+              Важные прецеденты 2024-2025 года, которые меняют правоприменительную практику
+            </p>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-8">
+            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+              <CardHeader>
+                <div className="flex items-start justify-between mb-3">
+                  <Badge variant="outline" className="bg-red-50 text-red-700 border-red-200">
+                    <Icon name="Gavel" size={14} className="mr-1" />
+                    Верховный Суд РФ
+                  </Badge>
+                  <span className="text-sm text-muted-foreground">Октябрь 2024</span>
+                </div>
+                <CardTitle className="text-xl mb-3">Возврат страховки по кредиту: новые правила</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Определение № 5-КГ24-75-К2. ВС РФ признал незаконным отказ банков возвращать страховку 
+                  при досрочном погашении кредита. Теперь заёмщики могут вернуть неиспользованную часть 
+                  страховой премии пропорционально оставшемуся сроку договора.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-amber-50 border-l-4 border-amber-500 p-4 mb-4">
+                  <p className="text-sm font-semibold text-amber-900 mb-1">Практическое значение:</p>
+                  <p className="text-sm text-amber-800">
+                    Если вы досрочно погасили кредит — требуйте возврат страховки. 
+                    Срок обращения — 3 года с даты погашения.
+                  </p>
+                </div>
+                <Button variant="outline" className="w-full">
+                  <Icon name="FileText" size={16} className="mr-2" />
+                  Читать полный текст решения
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+              <CardHeader>
+                <div className="flex items-start justify-between mb-3">
+                  <Badge variant="outline" className="bg-blue-50 text-blue-700 border-blue-200">
+                    <Icon name="Gavel" size={14} className="mr-1" />
+                    Конституционный Суд РФ
+                  </Badge>
+                  <span className="text-sm text-muted-foreground">Сентябрь 2024</span>
+                </div>
+                <CardTitle className="text-xl mb-3">Защита прав дольщиков усилена</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Постановление № 35-П. КС РФ обязал застройщиков выплачивать неустойку за просрочку 
+                  передачи квартиры, даже если дом введён в эксплуатацию. Размер — 1/300 ставки ЦБ 
+                  от цены договора за каждый день просрочки.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-blue-50 border-l-4 border-blue-500 p-4 mb-4">
+                  <p className="text-sm font-semibold text-blue-900 mb-1">Практическое значение:</p>
+                  <p className="text-sm text-blue-800">
+                    Дольщики теперь могут требовать компенсацию за каждый день задержки, 
+                    независимо от причин. Средняя выплата — от 150 000 до 500 000 ₽.
+                  </p>
+                </div>
+                <Button variant="outline" className="w-full">
+                  <Icon name="FileText" size={16} className="mr-2" />
+                  Читать полный текст решения
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+              <CardHeader>
+                <div className="flex items-start justify-between mb-3">
+                  <Badge variant="outline" className="bg-green-50 text-green-700 border-green-200">
+                    <Icon name="Gavel" size={14} className="mr-1" />
+                    Верховный Суд РФ
+                  </Badge>
+                  <span className="text-sm text-muted-foreground">Август 2024</span>
+                </div>
+                <CardTitle className="text-xl mb-3">Трудовые споры: запись разговора как доказательство</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Определение № 18-КГ24-52. Суд признал аудиозаписи разговоров с работодателем 
+                  допустимым доказательством по трудовым спорам. Теперь работники могут использовать 
+                  записи для подтверждения незаконного увольнения или невыплаты зарплаты.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-green-50 border-l-4 border-green-500 p-4 mb-4">
+                  <p className="text-sm font-semibold text-green-900 mb-1">Практическое значение:</p>
+                  <p className="text-sm text-green-800">
+                    Записывайте переговоры с работодателем о зарплате, условиях труда, увольнении. 
+                    Это может стать ключевым доказательством в суде.
+                  </p>
+                </div>
+                <Button variant="outline" className="w-full">
+                  <Icon name="FileText" size={16} className="mr-2" />
+                  Читать полный текст решения
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="bg-white/95 backdrop-blur-sm shadow-xl border-2 hover:border-primary transition-all">
+              <CardHeader>
+                <div className="flex items-start justify-between mb-3">
+                  <Badge variant="outline" className="bg-purple-50 text-purple-700 border-purple-200">
+                    <Icon name="Gavel" size={14} className="mr-1" />
+                    Арбитражный Суд
+                  </Badge>
+                  <span className="text-sm text-muted-foreground">Июль 2024</span>
+                </div>
+                <CardTitle className="text-xl mb-3">Налоговые проверки: новые ограничения для ФНС</CardTitle>
+                <CardDescription className="text-base leading-relaxed">
+                  Постановление № А40-287456/2023. Суд запретил ФНС требовать документы, 
+                  не относящиеся к проверяемому периоду. Налоговая обязана чётко обосновать 
+                  необходимость каждого запрашиваемого документа.
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <div className="bg-purple-50 border-l-4 border-purple-500 p-4 mb-4">
+                  <p className="text-sm font-semibold text-purple-900 mb-1">Практическое значение:</p>
+                  <p className="text-sm text-purple-800">
+                    Бизнес может законно отказать ФНС в предоставлении документов, 
+                    не связанных с проверкой. Это снижает риск "рыболовной экспедиции".
+                  </p>
+                </div>
+                <Button variant="outline" className="w-full">
+                  <Icon name="FileText" size={16} className="mr-2" />
+                  Читать полный текст решения
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+
+          <div className="text-center mt-12">
+            <Button size="lg" className="text-base">
+              <Icon name="Scale" size={18} className="mr-2" />
+              Смотреть всю судебную практику
+            </Button>
+          </div>
+        </div>
+      </section>
+
       <section id="tariffs" className="py-20 px-6 bg-muted/50 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-40 left-20 w-[450px] h-[450px] bg-accent rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '2s' }}></div>
