@@ -7,6 +7,7 @@ import { Badge } from '@/components/ui/badge';
 import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 import AnimatedBackground from '@/components/AnimatedBackground';
+import OnlineConsultant from '@/components/OnlineConsultant';
 
 const services = [
   {
@@ -831,6 +832,8 @@ export default function Index() {
           </div>
         </div>
       </footer>
+
+      <OnlineConsultant />
     </div>
   );
 }
