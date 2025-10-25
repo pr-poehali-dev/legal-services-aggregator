@@ -141,6 +141,7 @@ const stats = [
 export default function Index() {
   const [formData, setFormData] = useState({ name: '', email: '', phone: '', message: '' });
   const { toast } = useToast();
+  const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
     const observerOptions = {
@@ -159,7 +160,16 @@ export default function Index() {
     const elements = document.querySelectorAll('.reveal-text');
     elements.forEach((el) => observer.observe(el));
 
-    return () => observer.disconnect();
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      observer.disconnect();
+      window.removeEventListener('scroll', handleScroll);
+    };
   }, []);
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -173,7 +183,13 @@ export default function Index() {
 
   return (
     <div className="min-h-screen">
-      <header className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm">
+      <header 
+        className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm transition-all duration-300"
+        style={{ 
+          backgroundColor: scrollY > 50 ? 'rgba(255, 255, 255, 0.95)' : 'rgba(255, 255, 255, 0.8)',
+          boxShadow: scrollY > 50 ? '0 4px 6px -1px rgba(0, 0, 0, 0.1)' : '0 1px 3px 0 rgba(0, 0, 0, 0.1)'
+        }}
+      >
         <div className="container mx-auto px-6 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
@@ -201,8 +217,14 @@ export default function Index() {
 
       <section className="relative bg-gradient-to-br from-primary via-blue-600 to-blue-800 text-white py-20 md:py-32 px-6 overflow-hidden">
         <div className="absolute inset-0 opacity-20">
-          <div className="absolute top-10 left-20 w-72 h-72 bg-secondary rounded-full blur-3xl animate-pulse"></div>
-          <div className="absolute bottom-10 right-20 w-96 h-96 bg-accent rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
+          <div 
+            className="absolute top-10 left-20 w-72 h-72 bg-secondary rounded-full blur-3xl animate-pulse"
+            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
+          ></div>
+          <div 
+            className="absolute bottom-10 right-20 w-96 h-96 bg-accent rounded-full blur-3xl animate-pulse" 
+            style={{ transform: `translateY(${scrollY * 0.5}px)`, animationDelay: '1s' }}
+          ></div>
         </div>
         
         <div className="container mx-auto max-w-7xl relative z-10">
@@ -232,7 +254,14 @@ export default function Index() {
               
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
                 {stats.map((stat, index) => (
-                  <div key={index} className="animate-fade-in" style={{ animationDelay: `${index * 0.1}s` }}>
+                  <div 
+                    key={index} 
+                    className="animate-fade-in transition-transform duration-300 hover:scale-110" 
+                    style={{ 
+                      animationDelay: `${index * 0.1}s`,
+                      transform: `translateY(${scrollY * (0.02 + index * 0.01)}px)`
+                    }}
+                  >
                     <div className="flex items-center gap-2 mb-2">
                       <Icon name={stat.icon as any} size={20} className="text-secondary" />
                       <div className="text-3xl font-bold">{stat.value}</div>
@@ -244,7 +273,10 @@ export default function Index() {
             </div>
             
             <div className="hidden lg:block">
-              <div className="relative">
+              <div 
+                className="relative"
+                style={{ transform: `translateY(${scrollY * 0.15}px)` }}
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-secondary/20 to-accent/20 rounded-3xl blur-2xl"></div>
                 <img 
                   src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=800"
@@ -257,8 +289,18 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-muted/30">
-        <div className="container mx-auto max-w-7xl">
+      <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-muted/30 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div 
+            className="absolute top-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.2}px)` }}
+          ></div>
+          <div 
+            className="absolute bottom-20 left-10 w-96 h-96 bg-secondary rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.25}px)` }}
+          ></div>
+        </div>
+        <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4 text-base px-4 py-2 reveal-text">Направления работы</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Юридические услуги по всем отраслям права</h2>
@@ -301,8 +343,18 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="tariffs" className="py-20 px-6 bg-muted/50">
-        <div className="container mx-auto max-w-7xl">
+      <section id="tariffs" className="py-20 px-6 bg-muted/50 relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div 
+            className="absolute top-40 left-20 w-80 h-80 bg-accent rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.18}px)` }}
+          ></div>
+          <div 
+            className="absolute bottom-40 right-20 w-80 h-80 bg-primary rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.22}px)` }}
+          ></div>
+        </div>
+        <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4 text-base px-4 py-2 reveal-text">Прозрачные цены</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Выберите формат сотрудничества</h2>
@@ -375,8 +427,18 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-6 bg-white">
-        <div className="container mx-auto max-w-7xl">
+      <section id="reviews" className="py-20 px-6 bg-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-5 pointer-events-none">
+          <div 
+            className="absolute top-10 left-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.12}px)` }}
+          ></div>
+          <div 
+            className="absolute bottom-10 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.16}px)` }}
+          ></div>
+        </div>
+        <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
             <Badge className="mb-4 text-base px-4 py-2 reveal-text">Отзывы клиентов</Badge>
             <h2 className="text-4xl md:text-5xl font-bold mb-6 reveal-text stagger-1">Что говорят о нас клиенты</h2>
@@ -426,8 +488,18 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="contact" className="py-20 px-6 bg-gradient-to-br from-primary to-blue-800 text-white">
-        <div className="container mx-auto max-w-5xl">
+      <section id="contact" className="py-20 px-6 bg-gradient-to-br from-primary to-blue-800 text-white relative overflow-hidden">
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div 
+            className="absolute top-10 left-10 w-64 h-64 bg-secondary rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.08}px)` }}
+          ></div>
+          <div 
+            className="absolute bottom-10 right-10 w-80 h-80 bg-accent rounded-full blur-3xl"
+            style={{ transform: `translateY(${scrollY * 0.1}px)` }}
+          ></div>
+        </div>
+        <div className="container mx-auto max-w-5xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div>
               <Badge className="mb-6 bg-secondary text-white border-0 text-base px-4 py-2 reveal-text">
