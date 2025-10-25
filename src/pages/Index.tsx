@@ -325,7 +325,7 @@ export default function Index() {
             {services.map((service, index) => (
               <Card 
                 key={service.id} 
-                className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary reveal-text stagger-${(index % 6) + 1}`}
+                className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary bg-white/95 backdrop-blur-sm shadow-xl reveal-text stagger-${(index % 6) + 1}`}
               >
                 <CardHeader>
                   <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
@@ -373,10 +373,10 @@ export default function Index() {
             {tariffs.map((tariff, index) => (
               <Card 
                 key={tariff.id} 
-                className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-2 reveal-text stagger-${index + 3} ${
+                className={`relative overflow-hidden transition-all duration-300 hover:-translate-y-2 bg-white/95 backdrop-blur-sm reveal-text stagger-${index + 3} ${
                   tariff.popular 
                     ? 'border-4 border-primary shadow-2xl scale-105' 
-                    : 'border-2 hover:border-primary hover:shadow-xl'
+                    : 'border-2 hover:border-primary hover:shadow-xl shadow-lg'
                 }`}
               >
                 {tariff.popular && (
