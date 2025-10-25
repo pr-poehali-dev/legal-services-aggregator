@@ -84,7 +84,7 @@ const StatsCounters = () => {
       </div>
       
       <div className="container mx-auto max-w-7xl relative z-10">
-        <div className="text-center mb-12">
+        <div className="text-center mb-16">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Наши достижения в цифрах</h2>
           <p className="text-xl text-muted-foreground">Результаты, которым доверяют тысячи клиентов</p>
         </div>

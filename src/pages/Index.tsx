@@ -213,6 +213,54 @@ export default function Index() {
       <AIChatbot />
       <MessengerButtons />
       
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Сколько стоит консультация юриста?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Первичная консультация (30 минут) бесплатна. Стандартная консультация от 3000 рублей."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Работаете ли вы по всей России?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Да, наши юристы оказывают услуги во всех регионах России, включая онлайн-консультации."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Как быстро я получу ответ?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Мы свяжемся с вами в течение 15 минут после отправки заявки."
+              }
+            }
+          ]
+        })}
+      </script>
+      
+      <script type="application/ld+json">
+        {JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "WebSite",
+          "url": "https://yoursite.com/",
+          "name": "ЮрПомощь",
+          "description": "Агрегатор юридических услуг №1 в России",
+          "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://yoursite.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+          }
+        })}
+      </script>
+      
       <header 
         className="bg-white/80 backdrop-blur-md border-b sticky top-0 z-50 shadow-sm transition-all duration-300"
         style={{ 
