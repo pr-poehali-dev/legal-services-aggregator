@@ -56,7 +56,7 @@ const Counter = ({ end, duration = 2000, suffix = '', label, icon }: CounterProp
   }, [isVisible, end, duration]);
 
   return (
-    <div ref={counterRef} className="text-center p-8 flex flex-col items-center justify-center h-full">
+    <div ref={counterRef} className="text-center flex flex-col items-center justify-center w-full">
       <div className="mb-4">
         <Icon name={icon as any} size={48} className="mx-auto text-primary" />
       </div>
@@ -77,7 +77,7 @@ const StatsCounters = () => {
   ];
 
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-primary/5 via-blue-50/50 to-indigo-50/30 relative overflow-hidden">
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
       <div className="absolute inset-0 opacity-10">
         <div className="absolute top-10 left-10 w-96 h-96 bg-primary rounded-full blur-3xl animate-pulse"></div>
         <div className="absolute bottom-10 right-10 w-96 h-96 bg-blue-500 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
@@ -93,7 +93,7 @@ const StatsCounters = () => {
           {counters.map((counter, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 min-h-[280px] flex items-center"
+              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 py-12 flex items-center justify-center"
             >
               <Counter {...counter} />
             </div>

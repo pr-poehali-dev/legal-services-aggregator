@@ -379,7 +379,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="container mx-auto max-w-7xl">
           <div className="grid md:grid-cols-2 gap-12 items-start">
             <div>
@@ -421,7 +421,7 @@ export default function Index() {
 
       <StatsCounters />
 
-      <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-muted/30 relative overflow-hidden">
+      <section id="services" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-primary rounded-full blur-3xl animate-float"></div>
           <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '3s' }}></div>
@@ -447,8 +447,8 @@ export default function Index() {
                 className={`group hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 border-2 hover:border-primary bg-white/95 backdrop-blur-sm shadow-xl reveal-text stagger-${(index % 6) + 1}`}
               >
                 <CardHeader>
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary group-hover:scale-110 transition-all">
-                    <Icon name={service.icon as any} size={32} className="text-primary group-hover:text-white transition-colors" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary transition-all">
+                    <Icon name={service.icon as any} size={32} className="text-primary group-hover:text-white group-hover:scale-125 transition-all duration-300" />
                   </div>
                   <CardTitle className="text-2xl mb-2">{service.title}</CardTitle>
                   <CardDescription className="text-base">{service.description}</CardDescription>
@@ -473,7 +473,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="cases" className="py-20 px-6 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100">
+      <section id="cases" className="py-20 px-6 relative overflow-hidden bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
             backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%231e40af' fill-opacity='0.4'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
@@ -631,7 +631,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="tariffs" className="py-20 px-6 bg-muted/50 relative overflow-hidden">
+      <section id="tariffs" className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100 relative overflow-hidden">
         <div className="absolute inset-0 opacity-10 pointer-events-none">
           <div className="absolute top-40 left-20 w-[450px] h-[450px] bg-accent rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '2s' }}></div>
           <div className="absolute bottom-40 right-20 w-[450px] h-[450px] bg-primary rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
@@ -663,8 +663,8 @@ export default function Index() {
                   </div>
                 )}
                 <CardHeader className={tariff.popular ? 'pt-12' : ''}>
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4">
-                    <Icon name={tariff.icon as any} size={32} className="text-primary" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group">
+                    <Icon name={tariff.icon as any} size={32} className="text-primary group-hover:scale-125 transition-all duration-300" />
                   </div>
                   <CardTitle className="text-2xl mb-2">{tariff.name}</CardTitle>
                   <div className="mb-3">
@@ -712,7 +712,7 @@ export default function Index() {
 
       <SuccessCases />
 
-      <section className="py-20 px-6 bg-white">
+      <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100">
         <div className="container mx-auto max-w-7xl">
           <PriceCalculator />
         </div>

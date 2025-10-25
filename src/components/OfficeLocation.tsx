@@ -4,14 +4,14 @@ import Icon from '@/components/ui/icon';
 
 const OfficeLocation = () => {
   return (
-    <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-blue-50/30">
+    <section className="py-20 px-6 bg-gradient-to-br from-slate-50 to-gray-100">
       <div className="container mx-auto max-w-7xl">
         <div className="text-center mb-12">
           <h2 className="text-4xl md:text-5xl font-bold mb-4">Наш офис</h2>
           <p className="text-xl text-muted-foreground">Приходите на личную консультацию или встретимся онлайн</p>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
+        <div className="max-w-3xl mx-auto">
           <Card className="shadow-xl border-2">
             <CardHeader>
               <CardTitle className="flex items-center gap-2">
@@ -83,19 +83,6 @@ const OfficeLocation = () => {
                 </div>
               </div>
             </CardContent>
-          </Card>
-
-          <Card className="shadow-xl border-2 overflow-hidden">
-            <div className="relative h-full min-h-[600px]">
-              <iframe
-                src="https://yandex.ru/map-widget/v1/?um=constructor%3A9c6d4cfcda82b830a7e8e4d0d5c6a1e5f8a5b7c9d3e1f2a4b6c8d0e2f4a6b8c0&amp;source=constructor"
-                width="100%"
-                height="100%"
-                frameBorder="0"
-                className="absolute inset-0"
-                title="Карта офиса"
-              ></iframe>
-            </div>
           </Card>
         </div>
 
