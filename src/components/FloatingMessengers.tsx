@@ -59,9 +59,7 @@ const FloatingMessengers = () => {
             <div className="absolute inset-0 rounded-full bg-primary animate-ping opacity-75"></div>
           </>
         )}
-        <span className="absolute bottom-full right-0 mb-2 bg-gray-900 text-white text-xs py-1 px-3 rounded whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none">
-          Написать нам
-        </span>
+
       </button>
     </div>
   );
