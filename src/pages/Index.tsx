@@ -8,6 +8,7 @@ import Icon from '@/components/ui/icon';
 import { useToast } from '@/hooks/use-toast';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import OnlineConsultant from '@/components/OnlineConsultant';
+import CourtBackgroundSlider from '@/components/CourtBackgroundSlider';
 
 const services = [
   {
@@ -234,46 +235,19 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="relative bg-gradient-to-br from-primary via-blue-600 to-blue-800 text-white py-20 md:py-32 px-6 overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-500 to-blue-900 animate-gradient"></div>
+      <section className="relative text-white py-20 md:py-32 px-6 overflow-hidden">
+        <CourtBackgroundSlider />
         
-        <div className="absolute inset-0 opacity-30">
-          <div className="absolute top-10 left-20 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl animate-float animate-pulse-glow"></div>
-          <div className="absolute bottom-10 right-20 w-[600px] h-[600px] bg-accent rounded-full blur-3xl animate-float-reverse animate-pulse-glow" style={{ animationDelay: '2s' }}></div>
-          <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-yellow-300 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
-          <div className="absolute bottom-1/4 right-1/3 w-[450px] h-[450px] bg-blue-300 rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '6s' }}></div>
-          
-          {[...Array(15)].map((_, i) => (
-            <div
-              key={i}
-              className="absolute w-4 h-4 bg-white rounded-full animate-particle opacity-60"
-              style={{
-                left: `${5 + i * 6}%`,
-                top: `${15 + (i % 5) * 15}%`,
-                animationDelay: `${i * 1.5}s`
-              }}
-            ></div>
-          ))}
-        </div>
+        <style>{`
+          @keyframes fadeInOut {
+            0%, 20% { opacity: 1; }
+            25%, 95% { opacity: 0; }
+            100% { opacity: 1; }
+          }
+        `}</style>
         
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="relative">
-            <div className="hidden lg:block absolute -top-20 -right-20 w-[500px] h-[500px] z-0">
-              <div 
-                className="relative"
-                style={{ transform: `translateY(${scrollY * 0.15}px)` }}
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-secondary/30 to-accent/30 rounded-full blur-3xl"></div>
-                <div className="relative w-full h-full rounded-full overflow-hidden shadow-2xl border-8 border-white/20 backdrop-blur-sm">
-                  <img 
-                    src="https://images.unsplash.com/photo-1589829545856-d10d557cf95f?w=600&h=600&fit=crop"
-                    alt="Юридические услуги"
-                    className="w-full h-full object-cover animate-scale-in"
-                    loading="lazy"
-                  />
-                </div>
-              </div>
-            </div>
 
             <div className="max-w-3xl animate-fade-in relative z-10">
               <Badge className="mb-6 bg-secondary text-white border-0 text-base px-4 py-2">
