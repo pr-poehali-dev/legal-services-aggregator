@@ -348,10 +348,6 @@ export default function Index() {
         </div>
       </section>
 
-      <LawyersSection />
-
-      <AnimatedCounters />
-
       <section id="cases" className="py-20 px-6 relative overflow-hidden bg-gradient-to-br from-slate-50 via-blue-50/30 to-slate-100">
         <div className="absolute inset-0 opacity-5">
           <div className="absolute inset-0" style={{
@@ -1029,8 +1025,6 @@ export default function Index() {
           </div>
         </div>
       </footer>
-
-      <OnlineConsultant />
     </div>
   );
 }
