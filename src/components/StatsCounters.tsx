@@ -57,7 +57,7 @@ const Counter = ({ end, duration = 2000, suffix = '', label, icon }: CounterProp
 
   return (
     <div ref={counterRef} className="text-center flex flex-col items-center justify-center w-full">
-      <div className="mb-4">
+      <div className="mb-4 transition-transform duration-300 hover:scale-125">
         <Icon name={icon as any} size={48} className="mx-auto text-primary" />
       </div>
       <div className="text-5xl md:text-6xl font-bold text-primary mb-2">
@@ -89,19 +89,19 @@ const StatsCounters = () => {
           <p className="text-xl text-muted-foreground">Результаты, которым доверяют тысячи клиентов</p>
         </div>
         
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-center justify-items-center">
           {counters.map((counter, index) => (
             <div
               key={index}
-              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 py-12 flex items-center justify-center"
+              className="bg-white rounded-2xl shadow-xl border-2 border-primary/10 hover:shadow-2xl hover:scale-105 transition-all duration-300 py-12 px-8 flex items-center justify-center w-full"
             >
               <Counter {...counter} />
             </div>
           ))}
         </div>
 
-        <div className="mt-12 text-center">
-          <p className="text-muted-foreground mb-6">Присоединяйтесь к тысячам довольных клиентов</p>
+        <div className="mt-16 text-center flex flex-col items-center justify-center">
+          <p className="text-muted-foreground mb-6 text-lg">Присоединяйтесь к тысячам довольных клиентов</p>
           <button className="bg-primary hover:bg-primary/90 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all duration-300 hover:scale-105 shadow-lg inline-flex items-center gap-2">
             <Icon name="Rocket" size={20} />
             Начать работу с нами

@@ -663,8 +663,8 @@ export default function Index() {
                   </div>
                 )}
                 <CardHeader className={tariff.popular ? 'pt-12' : ''}>
-                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group">
-                    <Icon name={tariff.icon as any} size={32} className="text-primary group-hover:scale-125 transition-all duration-300" />
+                  <div className="w-16 h-16 bg-primary/10 rounded-2xl flex items-center justify-center mb-4 group-hover:bg-primary transition-all">
+                    <Icon name={tariff.icon as any} size={32} className="text-primary transition-transform duration-300 hover:scale-125" />
                   </div>
                   <CardTitle className="text-2xl mb-2">{tariff.name}</CardTitle>
                   <div className="mb-3">
