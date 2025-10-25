@@ -215,34 +215,23 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="relative bg-gradient-to-br from-primary via-blue-600 to-blue-800 text-white py-20 md:py-32 px-6 overflow-hidden animate-gradient">
-        <div className="absolute inset-0 opacity-20">
-          <div 
-            className="absolute top-10 left-20 w-72 h-72 bg-secondary rounded-full blur-3xl animate-float animate-pulse-glow"
-            style={{ transform: `translateY(${scrollY * 0.3}px)` }}
-          ></div>
-          <div 
-            className="absolute bottom-10 right-20 w-96 h-96 bg-accent rounded-full blur-3xl animate-float-reverse animate-pulse-glow" 
-            style={{ transform: `translateY(${scrollY * 0.5}px)`, animationDelay: '2s' }}
-          ></div>
-          <div 
-            className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary rounded-full blur-3xl animate-float opacity-30"
-            style={{ transform: `translateY(${scrollY * 0.4}px)`, animationDelay: '4s' }}
-          ></div>
-          <div 
-            className="absolute bottom-1/4 right-1/3 w-80 h-80 bg-blue-400 rounded-full blur-3xl animate-float-reverse opacity-20"
-            style={{ transform: `translateY(${scrollY * 0.35}px)`, animationDelay: '6s' }}
-          ></div>
+      <section className="relative bg-gradient-to-br from-primary via-blue-600 to-blue-800 text-white py-20 md:py-32 px-6 overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-500 to-blue-900 animate-gradient"></div>
+        
+        <div className="absolute inset-0 opacity-30">
+          <div className="absolute top-10 left-20 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl animate-float animate-pulse-glow"></div>
+          <div className="absolute bottom-10 right-20 w-[600px] h-[600px] bg-accent rounded-full blur-3xl animate-float-reverse animate-pulse-glow" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute top-1/2 left-1/4 w-[400px] h-[400px] bg-yellow-300 rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute bottom-1/4 right-1/3 w-[450px] h-[450px] bg-blue-300 rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '6s' }}></div>
           
-          {[...Array(8)].map((_, i) => (
+          {[...Array(15)].map((_, i) => (
             <div
               key={i}
-              className="absolute w-2 h-2 bg-white rounded-full animate-particle"
+              className="absolute w-4 h-4 bg-white rounded-full animate-particle opacity-60"
               style={{
-                left: `${10 + i * 12}%`,
-                top: `${20 + (i % 3) * 25}%`,
-                animationDelay: `${i * 2.5}s`,
-                opacity: 0.4
+                left: `${5 + i * 6}%`,
+                top: `${15 + (i % 5) * 15}%`,
+                animationDelay: `${i * 1.5}s`
               }}
             ></div>
           ))}
@@ -311,28 +300,13 @@ export default function Index() {
       </section>
 
       <section id="services" className="py-20 px-6 bg-gradient-to-b from-white to-muted/30 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          <div 
-            className="absolute top-20 right-10 w-96 h-96 bg-primary rounded-full blur-3xl animate-float"
-            style={{ transform: `translateY(${scrollY * 0.2}px)` }}
-          ></div>
-          <div 
-            className="absolute bottom-20 left-10 w-96 h-96 bg-secondary rounded-full blur-3xl animate-float-reverse"
-            style={{ transform: `translateY(${scrollY * 0.25}px)`, animationDelay: '3s' }}
-          ></div>
-          <div 
-            className="absolute top-1/2 left-1/2 w-64 h-64 bg-accent rounded-full blur-3xl animate-pulse-glow"
-            style={{ transform: `translate(-50%, -50%) translateY(${scrollY * 0.15}px)`, animationDelay: '5s' }}
-          ></div>
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-20 right-10 w-[500px] h-[500px] bg-primary rounded-full blur-3xl animate-float"></div>
+          <div className="absolute bottom-20 left-10 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/2 left-1/2 w-[400px] h-[400px] bg-accent rounded-full blur-3xl animate-pulse-glow" style={{ transform: 'translate(-50%, -50%)', animationDelay: '5s' }}></div>
           
-          <div 
-            className="absolute top-10 left-1/3 w-32 h-32 border-4 border-primary/20 rounded-lg animate-rotate-slow"
-            style={{ transform: `translateY(${scrollY * 0.18}px)` }}
-          ></div>
-          <div 
-            className="absolute bottom-10 right-1/4 w-24 h-24 border-4 border-secondary/20 rounded-full animate-rotate-slow"
-            style={{ transform: `translateY(${scrollY * 0.22}px)`, animationDelay: '5s' }}
-          ></div>
+          <div className="absolute top-10 left-1/3 w-40 h-40 border-4 border-primary/30 rounded-lg animate-rotate-slow"></div>
+          <div className="absolute bottom-10 right-1/4 w-32 h-32 border-4 border-secondary/30 rounded-full animate-rotate-slow" style={{ animationDelay: '5s' }}></div>
         </div>
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
@@ -378,19 +352,10 @@ export default function Index() {
       </section>
 
       <section id="tariffs" className="py-20 px-6 bg-muted/50 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          <div 
-            className="absolute top-40 left-20 w-80 h-80 bg-accent rounded-full blur-3xl animate-float-reverse"
-            style={{ transform: `translateY(${scrollY * 0.18}px)`, animationDelay: '2s' }}
-          ></div>
-          <div 
-            className="absolute bottom-40 right-20 w-80 h-80 bg-primary rounded-full blur-3xl animate-float"
-            style={{ transform: `translateY(${scrollY * 0.22}px)`, animationDelay: '4s' }}
-          ></div>
-          <div 
-            className="absolute top-1/3 right-1/4 w-72 h-72 bg-secondary rounded-full blur-3xl animate-pulse-glow"
-            style={{ transform: `translateY(${scrollY * 0.2}px)`, animationDelay: '6s' }}
-          ></div>
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-40 left-20 w-[450px] h-[450px] bg-accent rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-40 right-20 w-[450px] h-[450px] bg-primary rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/3 right-1/4 w-[400px] h-[400px] bg-secondary rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '6s' }}></div>
         </div>
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
@@ -466,19 +431,10 @@ export default function Index() {
       </section>
 
       <section id="reviews" className="py-20 px-6 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-5 pointer-events-none">
-          <div 
-            className="absolute top-10 left-1/4 w-96 h-96 bg-secondary rounded-full blur-3xl animate-float"
-            style={{ transform: `translateY(${scrollY * 0.12}px)`, animationDelay: '1s' }}
-          ></div>
-          <div 
-            className="absolute bottom-10 right-1/4 w-96 h-96 bg-primary rounded-full blur-3xl animate-float-reverse"
-            style={{ transform: `translateY(${scrollY * 0.16}px)`, animationDelay: '3s' }}
-          ></div>
-          <div 
-            className="absolute top-1/2 right-10 w-80 h-80 bg-accent rounded-full blur-3xl animate-pulse-glow"
-            style={{ transform: `translateY(${scrollY * 0.14}px)`, animationDelay: '5s' }}
-          ></div>
+        <div className="absolute inset-0 opacity-10 pointer-events-none">
+          <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
+          <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-primary rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '3s' }}></div>
+          <div className="absolute top-1/2 right-10 w-[450px] h-[450px] bg-accent rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '5s' }}></div>
         </div>
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
@@ -531,19 +487,12 @@ export default function Index() {
       </section>
 
       <section id="contact" className="py-20 px-6 bg-gradient-to-br from-primary to-blue-800 text-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div 
-            className="absolute top-10 left-10 w-64 h-64 bg-secondary rounded-full blur-3xl animate-float-reverse"
-            style={{ transform: `translateY(${scrollY * 0.08}px)`, animationDelay: '2s' }}
-          ></div>
-          <div 
-            className="absolute bottom-10 right-10 w-80 h-80 bg-accent rounded-full blur-3xl animate-float"
-            style={{ transform: `translateY(${scrollY * 0.1}px)`, animationDelay: '4s' }}
-          ></div>
-          <div 
-            className="absolute top-1/3 left-1/3 w-96 h-96 bg-blue-400 rounded-full blur-3xl animate-pulse-glow"
-            style={{ transform: `translateY(${scrollY * 0.09}px)`, animationDelay: '6s' }}
-          ></div>
+        <div className="absolute inset-0 bg-gradient-to-br from-primary via-blue-700 to-blue-900 animate-gradient"></div>
+        
+        <div className="absolute inset-0 opacity-25 pointer-events-none">
+          <div className="absolute top-10 left-10 w-[400px] h-[400px] bg-secondary rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '2s' }}></div>
+          <div className="absolute bottom-10 right-10 w-[500px] h-[500px] bg-accent rounded-full blur-3xl animate-float" style={{ animationDelay: '4s' }}></div>
+          <div className="absolute top-1/3 left-1/3 w-[550px] h-[550px] bg-yellow-300 rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '6s' }}></div>
         </div>
         <div className="container mx-auto max-w-5xl relative z-10">
           <div className="grid md:grid-cols-2 gap-12 items-center">
