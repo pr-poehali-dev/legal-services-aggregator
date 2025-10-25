@@ -100,7 +100,7 @@ const AIChatbot = () => {
     return (
       <button
         onClick={() => setIsOpen(true)}
-        className="fixed bottom-6 left-6 z-50 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full p-5 shadow-2xl hover:scale-110 transition-all duration-300 group"
+        className="fixed bottom-24 right-6 z-50 bg-gradient-to-r from-purple-500 to-pink-500 text-white rounded-full p-5 shadow-2xl hover:scale-110 transition-all duration-300 group"
         aria-label="Открыть чат-бота"
       >
         <Icon name="Bot" size={28} />
@@ -114,7 +114,7 @@ const AIChatbot = () => {
   }
 
   return (
-    <Card className="fixed bottom-6 left-6 z-50 w-[400px] h-[600px] shadow-2xl flex flex-col animate-fade-in border-2 border-purple-200">
+    <Card className="fixed bottom-24 right-6 z-50 w-[400px] h-[600px] shadow-2xl flex flex-col animate-fade-in border-2 border-purple-200">
       <CardHeader className="bg-gradient-to-r from-purple-500 to-pink-500 text-white p-4 flex-row items-center justify-between space-y-0">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 bg-white/20 rounded-full flex items-center justify-center">

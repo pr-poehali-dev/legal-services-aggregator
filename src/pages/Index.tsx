@@ -9,6 +9,7 @@ import { useToast } from '@/hooks/use-toast';
 import AnimatedBackground from '@/components/AnimatedBackground';
 import FloatingMessengers from '@/components/FloatingMessengers';
 import AIChatbot from '@/components/AIСhatbot';
+import CourtBackgroundSlider from '@/components/CourtBackgroundSlider';
 
 const services = [
   {
@@ -237,7 +238,8 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="relative text-white py-20 md:py-32 px-6 overflow-hidden bg-gradient-to-br from-primary via-blue-700 to-blue-900">
+      <section className="relative text-white py-20 md:py-32 px-6 overflow-hidden">
+        <CourtBackgroundSlider />
         
         <style>{`
           @keyframes fadeInOut {
