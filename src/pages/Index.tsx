@@ -584,11 +584,27 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="reviews" className="py-20 px-6 bg-white relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10 pointer-events-none">
-          <div className="absolute top-10 left-1/4 w-[500px] h-[500px] bg-secondary rounded-full blur-3xl animate-float" style={{ animationDelay: '1s' }}></div>
-          <div className="absolute bottom-10 right-1/4 w-[500px] h-[500px] bg-primary rounded-full blur-3xl animate-float-reverse" style={{ animationDelay: '3s' }}></div>
-          <div className="absolute top-1/2 right-10 w-[450px] h-[450px] bg-accent rounded-full blur-3xl animate-pulse-glow" style={{ animationDelay: '5s' }}></div>
+      <section id="reviews" className="py-20 px-6 relative overflow-hidden bg-gradient-to-br from-blue-50/40 via-white to-indigo-50/30">
+        <div className="absolute inset-0 opacity-[0.03]">
+          <div className="absolute inset-0" style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='%233b82f6' fill-opacity='1' fill-rule='evenodd'/%3E%3C/svg%3E")`,
+            backgroundSize: '100px 100px'
+          }}></div>
+        </div>
+        
+        <div className="absolute top-20 left-10 w-[600px] h-[600px] bg-blue-200/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-[500px] h-[500px] bg-indigo-200/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] bg-gradient-to-br from-blue-100/5 to-purple-100/5 rounded-full blur-3xl"></div>
+        
+        <div className="absolute inset-0 opacity-[0.02]">
+          <svg className="w-full h-full" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <pattern id="hearts" x="0" y="0" width="100" height="100" patternUnits="userSpaceOnUse">
+                <path d="M50 70 L35 55 Q25 45 25 35 Q25 20 35 20 Q45 20 50 30 Q55 20 65 20 Q75 20 75 35 Q75 45 65 55 Z" fill="#3b82f6" opacity="0.5"/>
+              </pattern>
+            </defs>
+            <rect width="100%" height="100%" fill="url(#hearts)"/>
+          </svg>
         </div>
         <div className="container mx-auto max-w-7xl relative z-10">
           <div className="text-center mb-16">
